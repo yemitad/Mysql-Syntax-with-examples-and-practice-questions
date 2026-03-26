@@ -4,7 +4,7 @@
 
 
 # DDL command- Data definition language 
-
+## CREATE ,USE and DROP functions 
 Create DATABASE database_name;
 USE database_name; 
 DROP DATABASE database_name; ( To delete it) 
