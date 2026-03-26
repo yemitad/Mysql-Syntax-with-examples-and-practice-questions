@@ -1,7 +1,7 @@
 # Mysql-Syntax-with-examples-and-practice-questions
 
-###MySQL 
-###Syntax 
+## MySQL 
+## Syntax 
 
 
 DDL command- Data definition language 
