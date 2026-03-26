@@ -6,7 +6,7 @@
 # DDL command- Data definition language 
 ## CREATE ,USE and DROP functions
 
-SYNTAX 
+
 ---
 Create DATABASE database_name;
 USE database_name; 
@@ -25,7 +25,6 @@ CREATE TABLE table_name(
 
 ## INSERT VALUES TO A TABLE 
 
-SYNTAX 
 
 Approach 1
 
@@ -36,18 +35,18 @@ INSERT INTO Table_name VALUES( value1, value2, value3,…)
 INSERT INTO Table_name (column1, column2)
                        Values (value1, value 2, value3) , (Value 4, value 5 , value 6)
 
-
-Example 
+---
+# Example 
 
 INSERT INTO customers (customer_id, customer_name, city, age)
 VALUES (5, “John”, “London”, 44)
-
+---
 Assignment 1 
 
 * Create an Employee table 
        Employee id, employee name, department, salary, date of joining
 
-
+---
 
 Solution
 
