@@ -14,7 +14,7 @@ USE database_name;
 
 DROP DATABASE database_name; (Deletes database) 
 
-USE Sales; ( To select database - the sales database will be selected)
+USE Sales; ( To select database - In this case the sales database will be selected)
 
  
 ---
