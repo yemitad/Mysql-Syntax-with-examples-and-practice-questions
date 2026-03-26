@@ -9,9 +9,13 @@
 
 ---
 Create DATABASE database_name;
+
 USE database_name; 
+
 DROP DATABASE database_name; (Deletes database) 
+
 USE Sales; ( To select database - the sales database will be selected)
+
  
 ---
 PLEASE NOTE : The above syntax only creates a structure of the table doesn’t add the values inside
@@ -23,23 +27,24 @@ CREATE TABLE table_name(
 );
 
 
-## INSERT VALUES TO A TABLE 
+# INSERT VALUES TO A TABLE 
 
 
-Approach 1
+# Approach 1
 
 INSERT INTO Table_name VALUES( value1, value2, value3,…)
 
-**Approach 2 ** 
+# Approach 2 
 
 INSERT INTO Table_name (column1, column2)
                        Values (value1, value 2, value3) , (Value 4, value 5 , value 6)
 
----
+
 # Example 
 
 INSERT INTO customers (customer_id, customer_name, city, age)
 VALUES (5, “John”, “London”, 44)
+
 ---
 Assignment 1 
 
@@ -48,16 +53,7 @@ Assignment 1
 
 ---
 
-Solution
-
-CREATE TABLE Employee(
-                              Employee_Id INT PRIMARY KEY,
-                              Employee_name VARCHAR(50) NOT NULL,
-                              Department VARCHAR(50),
-                              Date_of_joining  DATE NOT NULL
-);
-
-INSERT INTO Employee VALUES (1, ‘John’, ‘IT’ ,’2025-01-01’);
+# Solution
 
 
 CREATE TABLE Employee(
@@ -72,14 +68,14 @@ INSERT INTO Employee VALUES (1, ‘John’, ‘IT’ ,’2025-01-01’);
 
 ## Data Types
 
-DATATYPE	  Description	                USAGE
+
 INT	 --Integer values(Ids,counts)	 -- INT
 BIGINT --	Large integer Values -- 	BIGINT
 VARCHAR --	Variable-length string	 -- VARCHAR(255)
-CHAR	Fixed-length String	CHAR (10)
-TEXT	Long text data	TEXT
-DECIMAL	Exact decimal values(money)	DECIMAL(10,2)
-FLOAT	Approx decimal values	FLOAT 
+CHAR --	Fixed-length String	CHAR (10)
+TEXT	 ---Long text data	TEXT
+DECIMAL	 ---Exact decimal values(money)	DECIMAL(10,2)
+FLOAT	--Approx decimal values	FLOAT 
 BOOLEAN	True/False (0 or 1)	BOOLEAN
 DATE	Date in YYYY-MM-DD format	DATE
 DATETIME	Date & Time	DATETIME
