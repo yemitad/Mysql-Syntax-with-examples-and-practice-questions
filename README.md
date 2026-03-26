@@ -238,6 +238,21 @@ ALTER TABLE patients ADD age INT;
 ALTER TABLE patients ADD email VARCHAR(50); 
 
 
+---
+
+## 3. DROP ( both for table and database ) it completely deletes it 
+
+Syntax 
+
+DROP TABLE table _name; 
+DROP DATABASE database_name;
+
+## Examples: 
+
+DROP TABLE patients ;
+
+DROP DATABASE Employee ; 
+
 
 
 
