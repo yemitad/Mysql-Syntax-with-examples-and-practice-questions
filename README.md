@@ -115,8 +115,10 @@ Roll number  - must be unique
 
 Age - must be positive
 
+SYNTAX 
 
 CREATE TABLE table_name
+
 (Column_name1  datatype constraints) 
 
 
@@ -131,9 +133,9 @@ With constraints
  - Accurate data
  - No duplicates 
  - More reliable database 
+---
 
-
-Types of constraints 
+# Types of constraints 
 
   1 . NOT NULL  - column cannot be empty 
        Example : name VARCHAR(50) NOT NULL 
@@ -186,10 +188,36 @@ INSERT INTO employee_information (employee_id,employee_name,email,age)
 VALUES(5, 'John','john1@hotmail.co.uk', 20)
 
 
-**SQL COMMANDS 
+# DIFFERENT TYPES OF SQL COMMANDS 
 <img width="1353" height="547" alt="image" src="https://github.com/user-attachments/assets/945283cc-1e14-4cb0-ae7e-8a2221ea720a" />
 
+---
 
+
+# 1. CREATE (can be used for both database & table)
+
+CREATE DATABASE database_name; 
+CREATE TABLE table_name( column1 datatype constraints)
+
+---
+# Example 
+
+Create database hospital; 
+
+USE hospital
+Create table patients(patient_id INT Primary key,
+                                     patient_name VARCHAR(50) NOT NULL, 
+                                     Age INT NOT NULL); 
+
+---
+
+# Practice 2 
+
+Create a table for Doctors under the database hospital with columns of the following Doctor id, name, department, specialist, age defining the constraints 
+
+
+
+# Solution 2 
 
 
 
