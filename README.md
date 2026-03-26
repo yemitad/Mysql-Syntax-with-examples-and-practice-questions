@@ -95,7 +95,9 @@ ENUM---	Single value from list(preselected values )---ENUM(‘Active’,’Inact
 
 BLOB---	Binary data (files/images) rarely used--	BLOB 
 
-## How to find out datatype within a table 
+---
+
+# How to check datatypes within a table 
 
 DESCRIBE TABLE_NAME ( helps to check the data type)
 
