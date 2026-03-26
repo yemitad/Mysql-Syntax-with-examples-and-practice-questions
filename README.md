@@ -265,6 +265,20 @@ TRUNCATE  TABLE Table_name;
 
 Example: TRUNCATE TABLE patients 
 
+## 5. RENAME ( renames the object ) ( can be used to rename tables)
+
+Syntax : 
+
+RENAME TABLE old_name TO new_name; 
+
+## Example: 
+
+RENAME TABLE patients TO patients_info;
+
+---
+
+# DATA QUERY LANGUAGE (DQL)
+
 
 
 
