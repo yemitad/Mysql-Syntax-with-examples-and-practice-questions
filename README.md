@@ -46,14 +46,14 @@ INSERT INTO customers (customer_id, customer_name, city, age)
 VALUES (5, “John”, “London”, 44)
 
 ---
-Assignment 1 
+## Practice 1 
 
 * Create an Employee table 
        Employee id, employee name, department, salary, date of joining
 
 ---
 
-# Solution
+## Solution
 
 
 CREATE TABLE Employee(
