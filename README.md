@@ -27,20 +27,20 @@ CREATE TABLE table_name(
 );
 
 
-# INSERT VALUES TO A TABLE 
+## INSERT VALUES TO A TABLE 
 
 
-# Approach 1
+## Approach 1
 
 INSERT INTO Table_name VALUES( value1, value2, value3,…)
 
-# Approach 2 
+## Approach 2 
 
 INSERT INTO Table_name (column1, column2)
                        Values (value1, value 2, value3) , (Value 4, value 5 , value 6)
 
 
-# Example 
+## Example 
 
 INSERT INTO customers (customer_id, customer_name, city, age)
 VALUES (5, “John”, “London”, 44)
@@ -83,28 +83,28 @@ DECIMAL	 ---Exact decimal values(money)	DECIMAL(10,2)
 
 FLOAT	--Approx decimal values	FLOAT 
 
-BOOLEAN	True/False (0 or 1)	BOOLEAN
+BOOLEAN	---True/False (0 or 1) --	BOOLEAN
 
-DATE	Date in YYYY-MM-DD format	DATE
+DATE	---Date in YYYY-MM-DD format	---DATE
 
-DATETIME	Date & Time	DATETIME
+DATETIME	--Date & Time---	DATETIME
 
-TIMESTAMP	Auto date-time tracking(hr min &single)	TIMESTAMP
+TIMESTAMP	---Auto date-time tracking(hr min &single)--	TIMESTAMP
 
-ENUM	Single value from list(preselected values )	ENUM(‘Active’,’Inactive’)
+ENUM---	Single value from list(preselected values )---ENUM(‘Active’,’Inactive’)
 
-BLOB	Binary data (files/images) rarely used	BLOB 
+BLOB---	Binary data (files/images) rarely used--	BLOB 
 
-# How to find out datatype within a table 
+## How to find out datatype within a table 
 
 DESCRIBE TABLE_NAME ( helps to check the data type)
 
 # Example: 
 Describe customers
 
-Give you of the data types , null values, key  etc
+generates the data types , null values, key  etc as an output
 
-
+---
 # CONSTRAINTS 
  - are restrictions or rules on data 
 
@@ -188,19 +188,19 @@ INSERT INTO employee_information (employee_id,employee_name,email,age)
 VALUES(5, 'John','john1@hotmail.co.uk', 20)
 
 
-# DIFFERENT TYPES OF SQL COMMANDS 
+## DIFFERENT TYPES OF SQL COMMANDS 
 <img width="1353" height="547" alt="image" src="https://github.com/user-attachments/assets/945283cc-1e14-4cb0-ae7e-8a2221ea720a" />
 
 ---
 
 
-# 1. CREATE (can be used for both database & table)
+## 1. CREATE (can be used for both database & table)
 
 CREATE DATABASE database_name; 
 CREATE TABLE table_name( column1 datatype constraints)
 
 ---
-# Example 
+## Example 
 
 Create database hospital; 
 
@@ -211,13 +211,20 @@ Create table patients(patient_id INT Primary key,
 
 ---
 
-# Practice 2 
+## Practice 2 
 
 Create a table for Doctors under the database hospital with columns of the following Doctor id, name, department, specialist, age defining the constraints 
 
 
 
-# Solution 2 
+## Solution 2 
+TBC 
+
+
+
+
+
+
 
 
 
