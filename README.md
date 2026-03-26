@@ -180,6 +180,10 @@ INSERT INTO employee_information (employee_id,employee_name,email,age)
 VALUES(5, 'John','john1@hotmail.co.uk', 20)
 
 
+**SQL COMMANDS 
+<img width="1353" height="547" alt="image" src="https://github.com/user-attachments/assets/945283cc-1e14-4cb0-ae7e-8a2221ea720a" />
+
+
 
 
 
