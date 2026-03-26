@@ -256,7 +256,8 @@ DROP TABLE patients ;
 DROP DATABASE Employee ; 
 
 
-## 4. TRUNCATE ( only works on table) ( This function only deletes the records of rows doesn’t delete the structure like the DROP functions) the structure of the table will stay the same including column names 
+## 4. TRUNCATE
+( only works on table) ( This function only deletes the records of rows doesn’t delete the structure like the DROP functions) the structure of the table will stay the same including column names 
 
 Syntax : 
 
