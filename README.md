@@ -75,12 +75,12 @@ CREATE TABLE Employee(
 INSERT INTO Employee VALUES (1, ‘John’, ‘IT’ ,’2025-01-01’);
 
 
-Data Types
+## Data Types
 
-DATATYPE	Description	USAGE
-INT	Integer values(Ids,counts)	INT
-BIGINT	Large integer Values	BIGINT
-VARCHAR	Variable-length string	VARCHAR(255)
+DATATYPE	  Description	                USAGE
+INT	 --Integer values(Ids,counts)	 -- INT
+BIGINT --	Large integer Values -- 	BIGINT
+VARCHAR --	Variable-length string	 -- VARCHAR(255)
 CHAR	Fixed-length String	CHAR (10)
 TEXT	Long text data	TEXT
 DECIMAL	Exact decimal values(money)	DECIMAL(10,2)
