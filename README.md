@@ -221,6 +221,23 @@ Create a table for Doctors under the database hospital with columns of the follo
 TBC 
 
 
+## 2. ALTER  - Modifies structure of a table ( only for used for tables and can't be used for database) 
+  
+ALTER TABLE table_name  ADD column_name datatype; 
+ALTER TABLE table_name DROP COLUMN  column_name;
+
+
+## Example :
+
+ALTER TABLE patients ADD address VARCHAR(50);
+
+ALTER TABLE patients DROP COLUMN address; 
+
+ALTER TABLE patients ADD age INT;
+
+ALTER TABLE patients ADD email VARCHAR(50); 
+
+
 
 
 
