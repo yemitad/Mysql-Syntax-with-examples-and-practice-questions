@@ -18,7 +18,7 @@ USE Sales; ( To select database - In this case the sales database will be select
 
  
 ---
-PLEASE NOTE : The above syntax only creates a structure of the table doesn’t add the values inside
+PLEASE NOTE : The below syntax only creates a structure of the table doesn’t add the values inside
 
 CREATE TABLE table_name(
                      column_name 1 datatype constraints ,
