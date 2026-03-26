@@ -4,39 +4,32 @@
 
 
 # DDL command- Data definition language 
-## CREATE ,USE and DROP functions 
+## CREATE ,USE and DROP functions
+
+## SYNTAX TO CREATE DATABASE 
 Create DATABASE database_name;
 USE database_name; 
-DROP DATABASE database_name; ( To delete it) 
-USE Sales; ( the sales database will be selected)
+DROP DATABASE database_name; (Deletes database) 
+USE Sales; ( To select database - the sales database will be selected)
  
 
-The above syntax only creates a structure of the table doesn’t add the values inside
+PLEASE NOTE : The above syntax only creates a structure of the table doesn’t add the values inside
+
+## SYNTAX 
 CREATE TABLE table_name(
                      column_name 1 datatype constraints ,
                      column_name 2 datatype constraints,
                      column_name 3 datatype constraints
-
-. 
-. 
 );
 
-Constraints tells whether it should have null value, unique value on each row , binary or truer false value
 
-Datatype = varchar,int
- Varchar(50) can take 50 characters inside
-
-Constraints - Primary key , not null 
-
-If we don’t add constraints the column contain any value like blank 
-
-Example  ID INT PRIMARY KEY
-
-Approach 1
+## INSERT VALUES TO A TABLE 
+**Approach 1**
 
 INSERT INTO Table_name VALUES( value1, value2, value3,…)
 
-Approach 2 
+**Approach 2 ** 
+
 INSERT INTO Table_name (column1, column2)
                        Values (value1, value 2, value3) , (Value 4, value 5 , value 6)
 
