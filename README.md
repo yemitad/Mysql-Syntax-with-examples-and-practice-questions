@@ -6,16 +6,16 @@
 # DDL command- Data definition language 
 ## CREATE ,USE and DROP functions
 
-## SYNTAX TO CREATE DATABASE 
+SYNTAX 
+---
 Create DATABASE database_name;
 USE database_name; 
 DROP DATABASE database_name; (Deletes database) 
 USE Sales; ( To select database - the sales database will be selected)
  
-
+---
 PLEASE NOTE : The above syntax only creates a structure of the table doesn’t add the values inside
 
-## SYNTAX 
 CREATE TABLE table_name(
                      column_name 1 datatype constraints ,
                      column_name 2 datatype constraints,
@@ -24,7 +24,10 @@ CREATE TABLE table_name(
 
 
 ## INSERT VALUES TO A TABLE 
-**Approach 1**
+
+SYNTAX 
+
+Approach 1
 
 INSERT INTO Table_name VALUES( value1, value2, value3,…)
 
