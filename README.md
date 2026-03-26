@@ -3,7 +3,7 @@
 ### MySQL Syntax 
 
 
-#DDL command- Data definition language 
+# DDL command- Data definition language 
 
 Create DATABASE database_name;
 USE database_name; 
