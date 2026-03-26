@@ -70,34 +70,49 @@ INSERT INTO Employee VALUES (1, ‘John’, ‘IT’ ,’2025-01-01’);
 
 
 INT	 --Integer values(Ids,counts)	 -- INT
+
 BIGINT --	Large integer Values -- 	BIGINT
+
 VARCHAR --	Variable-length string	 -- VARCHAR(255)
+
 CHAR --	Fixed-length String	CHAR (10)
+
 TEXT	 ---Long text data	TEXT
+
 DECIMAL	 ---Exact decimal values(money)	DECIMAL(10,2)
+
 FLOAT	--Approx decimal values	FLOAT 
+
 BOOLEAN	True/False (0 or 1)	BOOLEAN
+
 DATE	Date in YYYY-MM-DD format	DATE
+
 DATETIME	Date & Time	DATETIME
+
 TIMESTAMP	Auto date-time tracking(hr min &single)	TIMESTAMP
+
 ENUM	Single value from list(preselected values )	ENUM(‘Active’,’Inactive’)
+
 BLOB	Binary data (files/images) rarely used	BLOB 
 
+# How to find out datatype within a table 
 
 DESCRIBE TABLE_NAME ( helps to check the data type)
 
-Example: 
+# Example: 
 Describe customers
 
 Give you of the data types , null values, key  etc
 
 
-CONSTRAINTS 
+# CONSTRAINTS 
+ - are restrictions or rules on data 
 
-Restrictions or rules on data 
+# Example : 
+Name - cannot be empty
 
-Example : Name - cannot be empty
 Roll number  - must be unique
+
 Age - must be positive
 
 
@@ -106,10 +121,10 @@ CREATE TABLE table_name
 
 
 Without constraints 
-- Duplicate IDs
+- Duplicate Ids
 - Empty names
 - Wrong values 
-- Dirty data 
+- messy data 
 
 With constraints 
  - Clean data 
