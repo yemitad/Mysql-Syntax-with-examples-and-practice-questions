@@ -1,10 +1,9 @@
 # Mysql-Syntax-with-examples-and-practice-questions
 
-## MySQL 
-## Syntax 
+### MySQL Syntax 
 
 
-DDL command- Data definition language 
+#DDL command- Data definition language 
 
 Create DATABASE database_name;
 USE database_name; 
