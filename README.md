@@ -240,7 +240,7 @@ ALTER TABLE patients ADD email VARCHAR(50);
 
 ---
 
-## 3. DROP ( both for table and database ) it completely deletes it 
+## 3. DROP ( both for table and database ) it completely deletes a given database or table
 
 Syntax 
 
