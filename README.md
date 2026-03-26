@@ -1,4 +1,4 @@
-# Mysql-Syntax-with-examples-and-practice-questions
+# Mysql
 
 ### MySQL Syntax 
 
