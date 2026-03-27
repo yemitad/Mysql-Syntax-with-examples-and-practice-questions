@@ -48,7 +48,7 @@ VALUES (5, “John”, “London”, 44)
 ---
 ## Practice 1 
 
-* Create an Employee table 
+* Create an Employee table with the following columns 
        Employee id, employee name, department, salary, date of joining
 
 ---
