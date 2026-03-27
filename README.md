@@ -302,6 +302,47 @@ SELECT * From Sales_data
 SELECT order_id, customer_name, segement, Profit From sales_data 
 
 
+# WHERE 
+filters each and every rows for a conditions. 
+It gives only those records that match the condition 
+
+Syntax 
+
+SELECT column_names
+FROM Table_name
+WHERE condition; 
+
+
+### Example
+
+1. SELECT *
+    FROM customers 
+    WHERE city = 'Delhi';
+
+2. SELECT *
+   From sales_data
+   WHERE region = 'east';
+
+3. SELECT *
+   FROM Sales_data 
+WHERE quantity = 5;
+
+
+# Operators
+
+Comparsion Operators 
+= (equal) - matches exact value 
+WHERE column = value
+
+!= (Not Equal) - not equal to 
+or <> (Not Equal) 
+
+# Example  - To get all regions data except Central 
+
+SELECT * FROM 'Sales_data.csv' 
+WHERE region <> 'Central';
+
+
 
 
 
