@@ -332,15 +332,30 @@ WHERE quantity = 5;
 
 Comparsion Operators 
 = (equal) - matches exact value 
+#### Syntax 
 WHERE column = value
 
 != (Not Equal) - not equal to 
 or <> (Not Equal) 
 
-# Example  - To get all regions data except Central 
+#### Example  - To get all regions data except Central 
 
 SELECT * FROM 'Sales_data.csv' 
 WHERE region <> 'Central';
+
+>(Greater than) ; Works only on Numeric Field
+
+#### Example 
+SELECT * FROM 'Sales_data.csv' 
+WHERE sales > 1000;
+
+#### Please note : = and != or <> can work on both numeric fields and dimension fields
+
+<(less than) - works with numeric field 
+>= ( greater than equal to ) -works with numeric field 
+<= (greater than equal to ) - works with numeric field
+
+
 
 
 
