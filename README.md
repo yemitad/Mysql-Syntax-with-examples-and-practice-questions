@@ -1,6 +1,6 @@
 # Mysql
 
-### MySQL Syntax 
+# SQL -Standard Query Language
 
 
 # DDL command- Data definition language 
@@ -278,6 +278,30 @@ RENAME TABLE patients TO patients_info;
 ---
 
 # DATA QUERY LANGUAGE (DQL)
+
+SELECT , FROM 
+
+SELECT  - It is a command 
+
+FROM - It is a clause(helpers) not command . 
+
+DQL - has only one command, SELECT , Other terms like FROM, WHERE, GROUP BY, HAVING, ORDER BY, DISTINCT and LIMIT are clauses of SELECT, 
+not separate commands.
+
+
+SYNTAX 
+SELECT Column_Name FROM Table_Name   
+
+SELECT *  From Table_Name ( brings up all the data which can impact the performance)
+
+SELECT * From Table_Name LIMIT 10   ( this only brings up 10 rows but all columns will appear)
+
+ # Example: 
+
+SELECT * From Sales_data 
+SELECT order_id, customer_name, segement, Profit From sales_data 
+
+
 
 
 
