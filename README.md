@@ -17,6 +17,8 @@ USE database_name;
 
 DROP DATABASE database_name; (Deletes database) 
 
+#### Example :
+
 USE Sales; ( To select database - In this case the sales database will be selected)
 
  
@@ -51,7 +53,7 @@ VALUES (5, “John”, “London”, 44)
 ---
 ## Practice 1 
 
-* Create an Employee table with the following columns 
+* Create an Employee table with the following columns:  
        Employee id, employee name, department, salary, date of joining
 
 ---
@@ -100,11 +102,12 @@ BLOB---	Binary data (files/images) rarely used--	BLOB
 
 ---
 
-# How to check datatypes within a table 
+# How to check data types within a table 
+#### Syntax 
 
 DESCRIBE TABLE_NAME ( helps to check the data type)
 
-# Example: 
+#### Example: 
 Describe customers
 
 generates the data types , null values, key  etc as an output
@@ -169,6 +172,7 @@ SYNTAX
  CREATE TABLE table_name
 (column_name1 datatype constraints)
 
+#### Example :
 
 CREATE TABLE customer_information(
 
