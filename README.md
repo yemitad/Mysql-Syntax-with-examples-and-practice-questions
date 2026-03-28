@@ -8,6 +8,9 @@
 
 
 ---
+
+#### Syntax 
+
 Create DATABASE database_name;
 
 USE database_name; 
