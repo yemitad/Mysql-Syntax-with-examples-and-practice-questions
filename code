@@ -1,4 +1,8 @@
 ---
- SELECT * FROM Sales_data
+LIST OPERATOR - LIKE 
 
-WHERE customer_name LIKE ‘A%’
+ SELECT * FROM Sales_data
+ WHERE customer_name LIKE ‘A%’
+
+
+
