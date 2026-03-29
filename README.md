@@ -362,6 +362,222 @@ WHERE sales > 1000;
 >= ( greater than equal to ) -works with numeric field 
 <= (greater than equal to ) - works with numeric field
 
+Logical Operators 
+
+AND : both conditions must be true for output to be true
+
+SYNTAX : 
+
+WHERE condition1 AND condition2
+
+
+OR: Anyone condition needs be true for output to be true 
+
+SYNTAX: 
+
+WHERE condition1 or condition2
+ 
+
+NOT: Reverses the condition
+
+SYNTAX: 
+ 
+WHERE NOT condition 
+
+
+
+
+EXAMPLE: 
+
+AND 
+
+SELECT * FROM Sales_data
+WHERE segment =‘Corporate’ AND state = ‘Texas ‘
+
+
+OR
+
+SELECT *  FROM sales_data
+WHERE quality >=4  OR sales >1500 OR profit > 500 
+
+( If any of the conditions are true , the record will be pulled)
+
+SELECT * FROM sales_data 
+WHERE (Quantity >=4 AND sales > 1500) OR profit >500 
+
+( In this case all profit > 500 will be executed because of the or operator , for the other conditions connected with AND both conditions need to be satisfied )
+
+
+SELECT * FROM sales_data 
+WHERE (Quantity >=4 OR sales > 1500) AND (profit >500 OR discount = 1)
+
+
+NOT
+
+
+SELECT * FROM sales_data
+
+WHERE NOT region = ‘South’
+
+( it will bring record where region is not south)
+
+
+
+SELECT * FROM sales_data
+
+WHERE NOT quantity >=4 AND NOT sales > 1500
+
+Or can be written as if we don’t want to write NOT twice 
+
+SELECT * FROM sales_data
+WHERE NOT (quantity >=4 AND sales > 1500)
+
+
+
+Range Operators 
+
+BETWEEN : value inside a range(inclusive) 
+
+SYNTAX: 
+WHERE column BETWEEN value1 AND value2 
+
+
+Example: 
+
+SELECT * FROM sales_data 
+WHERE sales BETWEEN 1000 AND 1500 
+
+( this will display all records sales >=1000 and <= 1500 ) 
+
+
+List Operators
+
+
+ IN:  this is advance or operator 
+Match any value from list 
+
+IN works like multiple OR conditions, but it’s cleaner and more readable
+
+SYNTAX: 
+
+WHERE column IN (value1, value2, value3) 
+
+Examples: 
+
+SELECT * FROM sales_data 
+WHERE city IN(‘Delhi’, ‘Mumbai’,’Prune’)
+
+SELECT * FROM sales_data 
+WHERE region IN(‘East’, ‘Central’)
+
+SELECT * FROM sales_data 
+WHERE region IN (‘East’, ‘Central’) AND sub_category IN (‘Phones’ , ‘Art’)
+
+
+
+Pattern Operators
+
+Only works with string, text fields
+
+LIKE: Pattern matching  - Also called as Wildcard operator 
+
+
+Examples 
+
+WHERE name LIKE ‘A%’ - starts with A 
+WHERE name LIKE ‘%n’ -  ends with n
+WHERE name LIKE ‘%mit%’ - contains text ‘mit’
+WHERE name LIKE ‘____’ - Exactly have 4 letters(any letters)
+WHERE name NOT LIKE ‘A%’ - does not start with A 
+
+
+PLEASE NOTE:  symbols used are %( any number of characters , _( for a single character)
+
+
+
+SELECT * FROM Sales_data
+WHERE customer_name LIKE ‘A%’
+
+SELECT * FROM Sales_data
+WHERE customer_name LIKE ‘%S’
+
+#### PLEASE NOTE: 
+That it is not case sensitive the character can be lower case or upper case on the code
+
+SELECT * FROM sales_data 
+WHERE customer_name LIKE ‘%aa%’
+
+(It is not necessary that it will have a character at the beginning or at the end as long as aa is present )
+
+
+SELECT * FROM sales_data 
+WHERE customer_name LIKE ‘%oo’) 
+
+( here name must end with oo)
+
+
+SELECT * FROM sales_data 
+WHERE customer_name LIKE ‘________________’
+
+
+#### Output : 
+
+Benjamin Venier 
+#### PLEASE NOTE: space is also considered , in the above code customer name with 15 characters will be displaced as the number _ is 15 
+
+SELECT * FROM  sales_data
+WHERE customer_name LIKE ‘A____________’
+
+(Brings up all the customers starting with A)
+
+SELECT * FROM  sales_data
+WHERE customer_name LIKE ‘__n____________’
+
+
+(here 3rd letter must be n before n there should be two characters and after n there should be 12 characters)
+
+SELECT * FROM  sales_data
+
+#### NULL Operators
+
+IS NULL and IS NOT NULL 
+Checks empty values 
+
+#### SYNTAX:
+WHERE column IS NULL
+
+#### EXAMPLE : 
+
+SELECT * FROM sales _data
+WHERE Segment IS NULL
+
+( will display all null values ) 
+
+
+
+SELECT *. FROM sales_data
+WHERE  order_id IS NOT NULL 
+
+( can be used for data cleaning, show me records without null)
+
+
+#### Arithmetic Operators
+
+Performs mathematical operations like addition , substraction,multoplication
+Division, remainder on numeric values or columns 
+
+PLEASE NOTE that this only works for numeric values not dimensional fields or values 
+
+#### Examples : 
+
+SELECT * FROM sales_data
+WHERE sales +100 > 1000 
+
+
+
+
+
+
 
 
 
