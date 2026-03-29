@@ -6,3 +6,27 @@ LIST OPERATOR - LIKE
 
 
 
+SELECT * FROM Sales_data
+WHERE customer_name LIKE ‘A%’
+
+SELECT * FROM Sales_data
+WHERE customer_name LIKE ‘%S’
+
+#### PLEASE NOTE: 
+That it is not case sensitive the character can be lower case or upper case on the code
+
+SELECT * FROM sales_data 
+WHERE customer_name LIKE ‘%aa%’
+
+(It is not necessary that it will have a character at the beginning or at the end as long as aa is present )
+
+
+SELECT * FROM sales_data 
+WHERE customer_name LIKE ‘%oo’) 
+
+( here name must end with oo)
+
+
+SELECT * FROM sales_data 
+WHERE customer_name LIKE ‘________________’
+
