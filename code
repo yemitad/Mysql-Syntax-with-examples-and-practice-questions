@@ -1,0 +1,4 @@
+---
+ SELECT * FROM Sales_data
+
+WHERE customer_name LIKE ‘A%’
