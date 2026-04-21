@@ -573,6 +573,392 @@ PLEASE NOTE that this only works for numeric values not dimensional fields or va
 SELECT * FROM sales_data
 WHERE sales +100 > 1000 
 
+OFFSET
+
+Select *
+From table_name
+Limit x OFFset y; 
+ Or 
+
+Select *
+From table_name;
+Limit Y,X 
+
+
+
+X - Number of rows to return
+Y- Number of rows to skip 
+
+
+Example 
+
+Select * From sales_data 
+Order by Profit desc
+Limit 10 OFFSET 3 
+
+(This skips the first 3 records)
+
+
+Or 
+
+
+Select * From sales_data
+Order by Profit desc
+Limit 3, 10 
+
+(This skips the first 3 records)
+
+
+Question : print only the second max profit
+
+Select *  From Sales_data
+Order by profit Desc
+Limit 1 offset 1
+
+
+
+Question : print only the third max profit
+
+
+Select *  From Sales_data
+Order by profit Desc
+Limit 1 offset 2
+
+Or
+
+Select *  From Sales_data
+Order by profit Desc
+Limit 2,1
+
+
+Question : print only the fifth max profit
+
+Select *  From Sales_data
+Order by profit Desc
+Limit 4,1
+
+
+GROUP BY AND HAVING 
+
+Group by - combines rows that have the same value into a single group 
+
+Use group by when you need aggregation (sum, count, avg, max, min)
+
+Syntax 
+
+Select column_name, aggregate_function(column)
+From table_name
+Group by column_name;
+
+
+Multiple columns 
+
+Syntax 
+
+Selection col1, col2 , aggregate_function(column)
+From table_name
+Group by col1 , col2 
+
+
+￼
+
+Example
+
+Select category, sub_category, sum(sales) as total sales
+From sales_data
+Group by category, sub_category
+Order by category
+Limit 1
+
+Or 
+
+Select category, sub_category, sum(sales) as total sales
+From sales_data
+Group by 1,2
+Order by 3 dec
+Limit 1
+
+( we can use number to represent column 1 , 2 and 3 from the first line of code)
+
+
+HAVING 
+
+- Filters grouped results after aggregation
+- Sql having clause
+
+
+Select category, sub_category, sum(sales) as Total_Sales
+From sales_data
+Group by 1,2 
+Having sum(sales) > 150000
+
+
+Where clause would only work for raw by raw occasions but not for aggregate 
+
+
+Example: 
+
+Where should be written before group by 
+
+Select Category, sub_category, sum(sales) as Total_Sales
+From sales_data
+Where category =‘Furniture’
+Group by 1,2
+Having sum(sales) > 100000
+Order by sum(sales) Desc
+Limit 1 offset 1 
+
+
+￼
+
+￼
+
+
+￼
+Please note: Count(1) is the same as count(*)
+
+Example count(region) - this will not count NULL values
+
+
+* SELECT region, count(region) FROM 'Sales_data.csv'
+group by region
+
+The above code will show each sell from region would be counted
+
+
+Average
+
+Avg()
+
+= sum() / count()
+
+
+￼
+Max
+
+Max() 
+
+Example: Select Max(sales) from sales_data 
+
+
+
+Min 
+Min()
+
+￼
+
+
+Foreign key
+￼
+
+
+INNER JOIN
+
+￼
+￼
+NULL  won’t be joined  - as null is not a value 
+Any time of join 
+
+The name of the column table 1 and table the name might not be the same but til have the same record
+
+
+
+
+￼
+
+
+INNER JOIN and JOIN 
+ The Default: INNER is the default join type in SQL. Per the ANSI SQL 92 specification, if you specify a join but do not specify a type, INNER is implicit.
+* Readability: Many developers prefer using the explicit INNER JOIN keyword because it makes the query's intent clearer, especially when the query also includes other join types like LEFT or RIGHT.
+
+
+Left Join /left outer join
+
+￼
+￼
+
+
+
+￼
+
+￼
+
+RIGHT JOIN/ right outer join 
+
+￼
+￼
+
+
+
+FULL OUTER JOIN
+
+￼
+
+
+￼
+
+
+Please note: in inner join/outer the position of the tables in the code doesn’t matter . I will only have an impact for left or right join
+
+
+
+Subquery / nested query 
+
+Inner query runs first 
+Outer query uses its result
+
+Select column
+From table 
+Where column OPERATOR
+            (Select column From table 
+                        Where condition); 
+
+Example : 
+
+— subquery 
+ - - 1. Orders with sales above average 
+   
+Select * 
+From sales_data
+Where sales > (
+       Select Avg(sales) from sales_data  )
+
+  - - 2. Highest sales orders 
+Select * 
+From sales_data 
+Where sales = (select max(sales) from sales_data)
+
+
+- - 3 lowest profit
+ Select * 
+From sales_data
+Where profit = (
+            Select  min(profit) from sales_data) 
+
+- - 4 . Orders with minimum discount
+ 
+Select * 
+From sales_data
+Where discount = 
+          (select min(discount) from sales_data) 
+
+- - 5 Orders from states that belong to west region 
+
+Select * 
+From sales_data 
+WHERE states IN ( SELECT * from sales_ data WHERE region =‘west’); 
+
+ =  - would only match with one single value 
+
+ IN  - would match with multiple values 
+
+Key Differences
+* Single vs. Multiple:
+    * =: Used for exact matches against one value (e.g., WHERE ID = 5).
+    * IN: Used to check if a value exists within a specific set (e.g., WHERE ID IN (5, 6, 7)).
+* Readability:
+    * Using IN is much cleaner than chaining multiple OR statements. For instance, WHERE City IN ('London', 'Paris') is preferred over WHERE City = 'London' OR City = 'Paris'.
+* Subqueries:
+    * =: Can only be used with a subquery if that subquery returns exactly one row and one column.
+    * IN: Can be used with subqueries that return multiple rows, checking if the outer value matches any result from the subquery.
+
+ - - 6 sales greater than ALL sales in South 
+
+Select * 
+From sales_data 
+Where sales > ALL( 
+               Select sales from sales_data 
+              Where region =‘South’);
+
+
+
+
+ALL - is an opposite of IN - 
+All will work as  multiple AND condition ( Everything must be satisfied) 
+IN - works as multiple condition like OR 
+
+
+OR 
+
+Select * 
+From sales_data 
+Where sales >( 
+               Select max(sales) from  sales_data 
+              Where region =‘South’);
+
+* Use IN when filtering rows based on a specific list or static set of values.
+* Use ANY to match rows against at least one value in a subquery result.
+* Use ALL when comparisons need to hold true for all values in a list or subquery.
+
+
+
+Correlated Subquery
+
+- Executes once for each row of the outer query 
+- Subquery uses values from the outer query 
+- Ideal for ranking, row -specific calculations and conditional logic
+
+Syntax
+Select * 
+From table1 t1
+Where column OPERATOR(
+              SELECT aggregate
+              FROM table2 t2
+              WHERE t1.col = t2.col
+         ); 
+
+Example :
+
+- - Find the highest sales order in each state
+
+Select * 
+From sales_data s1
+Where sales = (
+      Select MAX (sales) 
+From sales_data s2 
+Where s1.state = s2.state
+
+Drawbacks of correlated subquery
+
+- Slow performance
+- 
+￼
+
+Window Functions
+
+Row level calculations - normal SELECT & WHERE clause
+
+Group level calulations
+Group by 
+
+
+Window functions are needs for ROW +Group calculation together
+
+Example: running total, ranking, previous row comparison, moving average, ToP N per category 
+
+** Group by reduces row
+** Window functions keep rows 
+
+A window function performs a calculation across a set of related rows while still keeping every row in the result ( it groups but brings up all /every row) 
+
+
+Syntax
+
+SELECT 
+     Column, 	
+    Window_function_name() OVER(
+     PARTITION BY column 
+    ORDER BY column
+ ) 
+FROM table ; 
+
+PLEASE NOTE: Without OVER() it becomes normal aggregate 
+With OVER () becomes window function
+
+
+ 
+
+
 
 
 
