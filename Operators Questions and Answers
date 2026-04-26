@@ -58,7 +58,68 @@ Select order_id, customer_name, region, country,city, category,profit,discount
 from sales_data
 Where quantity = 3 and profit >200;
 
---11.
+--11.Show customers whose names start with the letter “h”.
+Select order_id, customer_name, region, country,city, category,profit,discount
+from sales_data
+where customer_name Like 'H%';
+
+--12.Retrieve customers whose names end with the letter “e”.
+Select order_id, customer_name, region, country,city, category,profit,discount
+from sales_data
+Where customer_name like '%e';
+
+--13. Display cities that contain the word “York”.
+Select order_id, customer_name,city, region, country,city, category,profit,discount
+from sales_data
+where city like '%York%';
+
+-- 14.Find orders belonging to Furniture or Office Supplies categories only.
+Select order_id, customer_name,city, region, country,city, category,profit,discount
+from sales_data
+where category ='Furniture' or category ='Office Supplies'
+
+--15.Show records for customers living in California, Texas, or Florida.
+Select order_id, customer_name,city, region, country,city, category,profit,discount
+from sales_data
+where state in ('California','Texas','Florida')
+
+-- 16.Find sub-categories whose names start with the letter “C”
+Select order_id, customer_name,city, region, country,city, category,profit,discount
+from sales_data
+where sub_category like 'C%'
+
+--17.Show Furniture orders that made more than 300 profit.
+Select order_id, customer_name,city, region, country,city, category,profit,discount
+from sales_data
+where category='Furniture' and profit > 300;
+
+--18.Find orders from the West region that gave discount but still resulted in
+loss.
+Select order_id, customer_name,city, region, country,city, category,profit,discount
+from sales_data
+where region='West' and discount > 0 and profit <0;
+
+--19.Retrieve orders where sales are above 2000 but quantity is less than 3.
+Select order_id, customer_name,city, region, country,city, category,profit,discount
+from sales_data
+where sales >2000 and quantity <3;
+
+--20.Show orders that either have very high sales (above 3000) or very high
+profit (above 800).
+Select order_id, customer_name,city, region, country,city, category,profit,discount
+from sales_data
+where sales >3000 or profit >800 ;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
