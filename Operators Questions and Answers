@@ -1,5 +1,5 @@
  -- Display only the orders that belong to the Furniture category
 Select order_id, customer_name, country,city, category 
-from 'Sales_data.csv' 
+from sales_data
 where category ='Furniture';
 
