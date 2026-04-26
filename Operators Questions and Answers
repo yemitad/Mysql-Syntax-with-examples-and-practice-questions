@@ -1,5 +1,66 @@
- -- Display only the orders that belong to the Furniture category
+ -- 1. Display only the orders that belong to the Furniture category
 Select order_id, customer_name, country,city, category 
 from sales_data
 where category ='Furniture';
+
+--2. Show all orders where the sales amount is more than 1000.
+Select order_id, customer_name, country,city, category 
+from sales_data
+where sales > 1000;
+
+--3. Find all orders that resulted in a loss.
+Select order_id, customer_name, country,city, category,profit 
+from sales_data
+where profit < 0; 
+
+--4. Show customers located in the West region.
+Select order_id, customer_name, country,city, category,profit 
+from sales_data
+where region= 'West';
+
+--5. Retrieve orders where exactly 2 items were purchased.
+Select order_id, customer_name, country,city, category,profit 
+from sales_data
+where quantity =2;
+
+--6.Display orders where some discount was given and not null
+Select order_id, customer_name, country,city, category,profit,discount
+from sales_data
+where discount >0 and discount is not null;
+
+--7. Show orders whose sales fall between 500 and 1500. ( between statement is inclusive for both lower and upper number)
+Select order_id, customer_name, country,city, category,profit,discount
+from sales_data
+where sales between 500 and 1500; 
+
+--8. Retrieve orders from either East or South region.
+Select order_id, customer_name, region, country,city, category,profit,discount
+from sales_data
+where region ='East' or region ='South'
+
+--9.Show all products except those from the Technology category.
+Select order_id, customer_name, region, country,city, category,profit,discount
+from sales_data
+where NOT category ='Technology'
+
+--or 
+Select order_id, customer_name, region, country,city, category,profit,discount
+from sales_data
+Where category <> 'Technology'
+
+--or 
+Select order_id, customer_name, region, country,city, category,profit,discount
+from sales_data
+Where category !='Technology'
+
+--10.Find orders where more than 3 items were bought and profit is above 200.
+Select order_id, customer_name, region, country,city, category,profit,discount
+from sales_data
+Where quantity = 3 and profit >200;
+
+--11.
+
+
+
+
 
