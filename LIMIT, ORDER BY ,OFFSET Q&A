@@ -30,13 +30,14 @@ from Sales_data
 Order by profit desc
 limit 10 offset 10;
 
-6. Show the top 5 highest sales orders only from the Furniture category.
-Select customer_name, order_id,sub_category, quantity, sales, category, profit
-from Sales_data
-order by sales desc
-limit 5; 
+--6. Show the top 5 highest sales orders only from the Furniture category.
+SELECT customer_name, order_id, sub_category, quantity, sales, category, profit
+FROM Sales_data
+WHERE category = 'Furniture' 
+ORDER BY sales DESC
+LIMIT 5;
 
-7. Retrieve the 3 least profitable Technology orders.
+--7. Retrieve the 3 least profitable Technology orders.
 Select customer_name, order_id,sub_category, quantity, sales, category, profit
 from Sales_data
 Where category ='Technology'
@@ -48,7 +49,7 @@ limit 3;
 Select customer_name, order_id,sub_category, quantity, sales, category, profit
 from Sales_data
 Where region ='West'
-order by sales
+order by sales desc
 limit 10;
 
 9. Show the most discounted 5 orders from Texas.
