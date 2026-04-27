@@ -922,7 +922,7 @@ Drawbacks of correlated subquery
 
 - Slow performance
 - 
-￼
+
 
 Window Functions
 
