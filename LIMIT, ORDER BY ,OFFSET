@@ -1,0 +1,35 @@
+--1. Find the second highest sales value in the dataset.
+Select customer_name, order_id, sub_category,quantity,sales, category ,profit
+from sales_data
+order by sales desc
+limit 1 offset 1
+
+--( limit x offset y) - x - the number of rows to return , y - the number of rows to skip 
+
+2. Show the third most profitable order.
+Select customer_name, order_id, sub_category,quantity,sales, category ,profit
+from sales_data
+order by profit desc
+limit 1 offset 2
+
+3. Retrieve orders ranked from 6th to 10th based on sales amount
+Select customer_name, order_id, sub_category,quantity,sales, category ,profit
+from Sales_data
+order by sales desc
+limit 5 offset 5;
+
+4. Display the next 5 records after the top 5 highest sales orders
+
+5. Skip the first 10 highest profit orders and show the following 10.
+6. Show the top 5 highest sales orders only from the Furniture category.
+7. Retrieve the 3 least profitable Technology orders.
+8. Display the first 10 orders from the West region after sorting by sales.
+9. Show the most discounted 5 orders from Texas.
+10. Display the latest 10 highest quantity orders for Office Supplies.
+11. Display only the 4th highest sales order.
+12. Show only the 3rd lowest profit order.
+13. Retrieve the 5th to 10th highest quantity orders.
+14. Show records ranked 11th–15th based on discount.
+15. Display only the 20th record after sorting by sales.
+16. Show the 9th, 10th, and 11th highest sales rows.
+17. Retrieve rows 31–40 after sorting alphabetically by state.
