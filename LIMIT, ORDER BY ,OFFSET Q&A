@@ -6,30 +6,96 @@ limit 1 offset 1
 
 --( limit x offset y) - x - the number of rows to return , y - the number of rows to skip 
 
-2. Show the third most profitable order.
+--2. Show the third most profitable order.
 Select customer_name, order_id, sub_category,quantity,sales, category ,profit
 from sales_data
 order by profit desc
 limit 1 offset 2
 
-3. Retrieve orders ranked from 6th to 10th based on sales amount
+--3. Retrieve orders ranked from 6th to 10th based on sales amount
 Select customer_name, order_id, sub_category,quantity,sales, category ,profit
 from Sales_data
 order by sales desc
 limit 5 offset 5;
 
-4. Display the next 5 records after the top 5 highest sales orders
+--4. Display the next 5 records after the top 5 highest sales orders
+Select customer_name, order_id, sub_category,quantity,sales, category ,profit
+from Sales_data
+order by sales desc
+limit 5 offset 5;
 
-5. Skip the first 10 highest profit orders and show the following 10.
+--5. Skip the first 10 highest profit orders and show the following 10.
+Select customer_name, order_id,sub_category, quantity, sales, category, profit
+from Sales_data
+Order by profit desc
+limit 10 offset 10;
+
 6. Show the top 5 highest sales orders only from the Furniture category.
+Select customer_name, order_id,sub_category, quantity, sales, category, profit
+from Sales_data
+order by sales desc
+limit 5; 
+
 7. Retrieve the 3 least profitable Technology orders.
+Select customer_name, order_id,sub_category, quantity, sales, category, profit
+from Sales_data
+Where category ='Technology'
+order by profit asc
+limit 3;
+
+
 8. Display the first 10 orders from the West region after sorting by sales.
+Select customer_name, order_id,sub_category, quantity, sales, category, profit
+from Sales_data
+Where region ='West'
+order by sales
+limit 10;
+
 9. Show the most discounted 5 orders from Texas.
+Select customer_name, discount, sales, category, profit
+from sales_data
+Where state ='Texas'
+order by discount desc
+limit 5;
+
+
 10. Display the latest 10 highest quantity orders for Office Supplies.
+
 11. Display only the 4th highest sales order.
 12. Show only the 3rd lowest profit order.
 13. Retrieve the 5th to 10th highest quantity orders.
 14. Show records ranked 11th–15th based on discount.
 15. Display only the 20th record after sorting by sales.
+16. Show the 9th, 10th, and 11th highest sales rows.
+17. Retrieve rows 31–40 after sorting alphabetically by state.
+
+Part 2
+1. Find regions where total sales is greater than 50,000.
+2. Find states where total profit is negative.
+3. Find categories where average profit is greater than 500.
+4. Find cities having more than 100 orders.
+5. Find customers whose total sales is more than 20,000.
+6. Find sub_categories where total quantity sold is greater than 300.
+7. Find regions where average discount is greater than 0.3.
+8. Find segments where total profit is greater than total sales.
+9. Find category and region combinations where total sales is more than
+30,000.
+10.Find ship modes where total profit is less than 0.
+11.Find states where total discount given is greater than 200.
+12.Find customers who placed more than 10 orders.
+13.Find sub_categories where average sales is less than 200.
+14.Find regions where total quantity sold is between 500 and 1000.
+15.Find cities where total profit is greater than 10,000.
+16.Which region generates the highest total profit?
+17.Which category contributes the most to total sales?
+18.Which sub_category has the lowest average profit?
+19.Who are the top 5 customers based on total sales?
+20.Which state has the highest total quantity sold?
+21.Which segment generates the lowest total profit?
+22.Which city has the highest average discount?
+23.Which ship_mode is most profitable?
+
+24.Which category has the highest loss overall?
+25.Which region has the best profit-to-sales ratio?
 16. Show the 9th, 10th, and 11th highest sales rows.
 17. Retrieve rows 31–40 after sorting alphabetically by state.
