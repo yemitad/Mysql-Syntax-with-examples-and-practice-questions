@@ -31,27 +31,134 @@ HAVING SUM(sales) >20000;
 
 6. Find sub_categories where total quantity sold is greater than 300.
 
+SELECT sub_category, SUM(quantity) as Total_quantity
+From 'Sales_data.csv'
+GROUP BY sub_category
+HAVING SUM(quantity) > 300;
 
 7. Find regions where average discount is greater than 0.3.
+SELECT region, AVG(discount) as Average_discount
+FROM 'Sales_data.csv'
+GROUP BY region 
+HAVING AVG(discount) > 0.3;
 
 
 8. Find segments where total profit is greater than total sales.
+SELECT segment, SUM(profit) as Total_profit, SUM(sales) as Total_sales
+FROM 'Sales_data.csv'
+GROUP BY segment
+HAVING SUM(profit) > SUM(sales);
+
 9. Find category and region combinations where total sales is more than
 30,000.
+SELECT category, region, SUM(sales) as Total_sales
+FROM 'Sales_data.csv'
+GROUP BY category,region
+HAVING SUM(sales) >30000;
+
 10.Find ship modes where total profit is less than 0.
+SELECT ship_mode, SUM(profit) as Total_profit 
+FROM 'Sales_data.csv'
+GROUP BY ship_mode
+HAVING SUM(profit) < 0; 
+
 11.Find states where total discount given is greater than 200.
+SELECT state, SUM(discount) as Total_discount
+FROM 'Sales_data.csv'
+GROUP BY state
+HAVING SUM(discount) > 200; 
+
 12.Find customers who placed more than 10 orders.
+SELECT customer_name, COUNT(*) as Regular_customers
+FROM 'Sales_data.csv'
+GROUP BY customer_name
+HAVING COUNT(*) > 10; 
+
 13.Find sub_categories where average sales is less than 200.
+SELECT sub_category, AVG(sales) as Average_sales
+FROM 'Sales_data.csv'
+GROUP BY sub_category 
+HAVING AVG(sales) < 200; 
+
 14.Find regions where total quantity sold is between 500 and 1000.
+SELECT region, SUM(quantity) as Total_quantity
+FROM 'Sales_data.csv'
+GROUP BY region 
+HAVING SUM(quantity) between 500 and 1000; 
+
 15.Find cities where total profit is greater than 10,000.
+SELECT city, SUM(profit) as Total_profit
+FROM 'Sales_data.csv'
+GROUP BY city 
+HAVING SUM(profit) > 10000;
+
 16.Which region generates the highest total profit?
+
+SELECT region, sum(profit) as Total_profit
+FROM 'Sales_data.csv'
+GROUP BY region
+ORDER BY Total_profit desc
+limit 1; 
+
 17.Which category contributes the most to total sales?
+
+SELECT category, SUM(sales) as Total_sales
+FROM 'Sales_data.csv'
+GROUP BY category
+ORDER BY Total_sales desc 
+limit 1; 
+
 18.Which sub_category has the lowest average profit?
+
+SELECT sub_category, AVG(profit) as average_profit
+FROM 'Sales_data.csv'
+GROUP BY sub_category
+ORDER BY average_profit asc
+limit 1; 
+
 19.Who are the top 5 customers based on total sales?
+
+
+SELECT customer_name, SUM(sales) as Total_sales
+FROM 'Sales_data.csv'
+GROUP BY customer_name
+ORDER BY Total_sales desc
+LIMIT 5; 
+
 20.Which state has the highest total quantity sold?
+
+SELECT state, SUM(quantity) as Total_quantity
+FROM 'Sales_data.csv'
+GROUP BY state
+ORDER BY Total_quantity desc
+LIMIT 1; 
+
 21.Which segment generates the lowest total profit?
+
+SELECT segment, SUM(profit) as Total_profit
+FROM 'Sales_data.csv'
+GROUP BY segment
+ORDER BY Total_profit asc
+LIMIT 1; 
+
 22.Which city has the highest average discount?
+
+SELECT city, avg(discount) as Average_discount
+FROM 'Sales_data.csv'
+GROUP BY city
+ORDER BY Average_discount desc
+LIMIT 1;
+
 23.Which ship_mode is most profitable?
+
+SELECT ship_mode , sum(profit) as Total_profit
+FROM 'Sales_data.csv'
+GROUP BY ship_mode
+ORDER BY Total_profit desc
+LIMIT 1;
+
+
+
 
 24.Which category has the highest loss overall?
 25.Which region has the best profit-to-sales ratio?
