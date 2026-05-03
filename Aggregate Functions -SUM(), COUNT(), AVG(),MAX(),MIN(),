@@ -157,8 +157,22 @@ GROUP BY ship_mode
 ORDER BY Total_profit desc
 LIMIT 1;
 
-
-
-
 24.Which category has the highest loss overall?
+SELECT category, min(profit) as highest_loss
+FROM 'Sales_data.csv' 
+GROUP BY category
+ORDER BY highest_loss asc
+limit 1; 
+
 25.Which region has the best profit-to-sales ratio?
+
+SELECT region, sum(profit/ sales) as profit_to_sales_ratio
+From 'Sales_data.csv'
+GROUP BY region 
+ORDER BY profit_to_sales_ratio desc
+limit 1; 
+
+
+
+
+
