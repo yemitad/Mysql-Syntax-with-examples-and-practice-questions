@@ -1,0 +1,185 @@
+patients table
+CREATE TABLE patients (
+patient_id INT PRIMARY KEY,
+patient_name VARCHAR(50),
+gender VARCHAR(10),
+age INT,
+city VARCHAR(30),
+blood_group VARCHAR(5)
+);
+
+visits table
+CREATE TABLE visits (
+visit_id INT PRIMARY KEY,
+patient_id INT,
+visit_date DATE,
+department VARCHAR(40),
+doctor_name VARCHAR(50),
+treatment_cost DECIMAL(8,2),
+payment_mode VARCHAR(20),
+FOREIGN KEY (patient_id) REFERENCES patients(patient_id)
+);
+
+Add records in patients table
+INSERT INTO patients VALUES
+(1,'Amit Sharma','Male',34,'Delhi','B+'),
+(2,'Neha Verma','Female',28,'Mumbai','O+'),
+(3,'Rahul Singh','Male',45,'Delhi','A+'),
+(4,'Priya Mehta','Female',32,'Bangalore','AB+'),
+(5,'Karan Malhotra','Male',50,'Mumbai','O-'),
+(6,'Simran Kaur','Female',26,'Chandigarh','B+'),
+(7,'Arjun Rao','Male',39,'Hyderabad','A-'),
+(8,'Megha Jain','Female',41,'Pune','O+'),
+(9,'Vikas Yadav','Male',36,'Lucknow','B-'),
+(10,'Sneha Iyer','Female',30,'Chennai','AB-'),
+(11,'Ritika Das','Female',29,'Kolkata','A+'),
+(12,'Manoj Kumar','Male',52,'Jaipur','B+'),
+(13,'Anjali Nair','Female',24,'Kochi','O-'),
+(14,'Deepak Joshi','Male',48,'Bhopal','AB+'),
+(15,'Pallavi Roy','Female',37,'Mumbai','A-');
+
+Add records in visits table
+INSERT INTO visits VALUES
+(101,1,'2025-01-01','Cardiology','Dr. Shah',5000,'Card'),
+(102,2,'2025-01-02','Dermatology','Dr. Rao',1500,'Cash'),
+(103,1,'2025-01-05','Orthopedic','Dr. Mehta',3000,'UPI'),
+(104,3,'2025-01-06','Neurology','Dr. Khan',7000,'Card'),
+(105,4,'2025-01-06','Gynecology','Dr. Sharma',2500,'UPI'),
+(106,5,'2025-01-07','General','Dr. Patel',1200,'Cash'),
+(107,6,'2025-01-08','ENT','Dr. Singh',1800,'UPI'),
+(108,7,'2025-01-09','Orthopedic','Dr. Mehta',3500,'Card'),
+(109,8,'2025-01-09','Cardiology','Dr. Shah',6200,'Card'),
+(110,2,'2025-01-10','General','Dr. Patel',1000,'Cash'),
+(111,9,'2025-01-10','Dermatology','Dr. Rao',1600,'UPI'),
+(112,10,'2025-01-11','ENT','Dr. Singh',2000,'Card'),
+(113,3,'2025-01-11','Cardiology','Dr. Shah',5500,'UPI'),
+(114,5,'2025-01-12','Neurology','Dr. Khan',7200,'Card'),
+(115,8,'2025-01-12','General','Dr. Patel',1300,'Cash'),
+(116,4,'2025-01-13','General','Dr. Patel',1100,'Cash'),
+(117,6,'2025-01-13','Cardiology','Dr. Shah',4800,'Card'),
+(118,7,'2025-01-14','Dermatology','Dr. Rao',1700,'UPI'),
+(119,9,'2025-01-14','Orthopedic','Dr. Mehta',3100,'Card'),
+(120,13,'2025-01-14','Gynac','Dr. Mehta',3500,'Card'),
+(121,16,'2025-01-15','General','Dr. Patel',900,'Cash');
+
+
+Questions
+1. Get all records from both tables for inner join
+
+SELECT 
+    p.patient_id, 
+    p.patient_name, 
+    v.visit_date, 
+    v.treatment_cost,
+    v.doctor_name
+FROM patients p 
+INNER JOIN visits v ON p.patient_id = v.patient_id;
+
+Please note : using SELECT * can bring up overwhelming results because it will return the patient_id column twice (once from each table).
+If you want to keep it clean, you might list the specific columns you need:
+
+2. Get all records from both tables for left join
+SELECT p.patient_id, 
+    p.patient_name, 
+    v.visit_date, 
+    v.treatment_cost,
+    v.doctor_name
+FROM patient p left join visits v on p.patient_id= v.patient_id;
+
+
+Key Characteristics of Your Result
+Completeness: You won't lose any patients from your 
+list just because they haven't had a visit yet.
+
+The "NULL" Effect: For patients who haven't visited, 
+the columns visit_date, treatment_cost, and doctor_name will be populated with NULL values.
+
+One-to-Many: If a patient has visited five times, 
+their name and patient_id will appear in five different rows, each paired with a different visit record.
+
+3. Get all records from both tables for right join
+SELECT p.patient_id,
+      p.patient_name,
+      v.visit_date,
+      v.treatment_cost,
+      v.doctor_name
+FROM patients p right join visits v on p.patient_id= v.patient_id; 
+
+
+--4. Get all records from both tables for outer join
+SELECT p.patient_id,
+       p.patient_name,
+       v.visit_date,
+       v.treatment_cost,
+       v.doctor_name
+FROM patients p full outer join visits v on p.patient_id=v.patient_id; 
+
+--5. Show patient name and department where department = 'Cardiology'.
+SELECT 
+    p.patient_name, 
+    v.department
+FROM patients p 
+INNER JOIN visits v ON p.patient_id = v.patient_id
+WHERE v.department = 'Cardiology';
+
+--6.Display patient name and treatment cost where treatment cost > 5000.
+SELECT 
+    p.patient_name, 
+    v.department
+FROM patients p 
+INNER JOIN visits v ON p.patient_id = v.patient_id
+WHERE treatment_cost > 5000;
+
+
+--7.List visits of patients from Delhi only.
+SELECT p.city, v.visit_id, patient_id
+FROM patients p inner join visits on p.patient_id =v.visit_id
+WHERE p.city ='Delhi'
+
+
+
+--8.Show female patients who visited the hospital.
+SELECT p.gender,v.visit_id,v.visit_date
+FROM patients p inner join visits v on 
+p.patient_id= v.patient_id
+WHERE p.gender='Female'; 
+
+--9.Display visits handled by 'Dr. Khan'
+SELECT p.patient_name, v.visit_id, v.doctor_name
+FROM patients p inner join visits v on 
+p.patient_id=v.patient_id
+Where v.doctor= 'Dr. Khan'; 
+
+
+--10.Show patients aged above 40 who had visits.
+SELECT p.patient_name, p.age, v.visit_id, v.visit_date
+FROM patients p inner join visits v on p.patient_id = v.patient_id
+WHERE p.age >40; 
+
+--11.Display visits paid using 'Card'
+SELECT p.patient_name, v.vist_id,v.payment_mode
+FROM patients p inner join visits v on p.patient_id = v.patient_id
+WHERE payment_mode ='Card';
+
+--12.Display patient name and visit date sorted by latest visit first.
+
+
+Show department and cost ordered by department name.
+List all visits sorted by city then treatment cost.
+Show patients who have no visits.
+Display patients whose department is NULL.
+Show all patients with visits only from Cardiology (include patients without visits).
+Find patients from Mumbai who never visited.
+Count number of visits per patient
+Find total treatment cost per patient
+Calculate total revenue per department
+Find number of patients per city who visited
+Show patients who visited more than 1 time
+Show doctors who handled more than 2 visits
+Find cities where hospital revenue is greater than 12,000
+Show top 5 most expensive visits
+Show patient name and total spending sorted by highest spending
+List doctors whose average treatment cost is above 4000
+
+
+
